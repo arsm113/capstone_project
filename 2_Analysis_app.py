@@ -13,9 +13,9 @@ st.set_page_config(page_title="Plotting Demo",layout="wide")
 st.title('Analytics')
 st.header('Overall Map')
 
-new_df = pd.read_csv('C:/Users/Asus/PycharmProjects/capstone_project/data_viz1.csv')
-df1 = pd.read_csv("C:/Users/Asus/PycharmProjects/capstone_project/gurgaon_properties.csv")
-df = pd.read_csv("C:/Users/Asus/PycharmProjects/capstone_project/gurgaon_properties_missing_value_imputation.csv")
+new_df = pd.read_csv('data_viz1.csv')
+df1 = pd.read_csv("gurgaon_properties.csv")
+df = pd.read_csv("gurgaon_properties_missing_value_imputation.csv")
 
 group_df = new_df.groupby('sector')[['price', 'price_per_sqft', 'built_up_area', 'latitude', 'longitude']].mean()
 fig = px.scatter_mapbox(group_df, lat="latitude", lon="longitude", color="price_per_sqft", size='built_up_area',
